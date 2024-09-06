@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <title>Atanas Bobchev's Professional Portfolio</title>
     <style>
         * {
@@ -16,7 +15,6 @@
 
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
             background-color: #f4f4f4;
             color: #333;
             padding: 20px;
@@ -72,8 +70,6 @@
         ul {
             list-style-type: none;
             padding: 0;
-            display: none;
-            /* Hidden by default */
         }
 
         ul li {
@@ -100,6 +96,23 @@
         footer p {
             font-size: 0.9em;
         }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        #certification-list {
+            display: none;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .skills-grid h3{
+            padding: 1em 0;
+        }
     </style>
 </head>
 
@@ -107,50 +120,63 @@
     <header>
         <h1>Hello, I'm Atanas Bobchev👋</h1>
         <p>I'm passionate about <strong>C# Web Development</strong> and have been actively working towards mastering it.
-            I
-            began my studies in <strong>September 2022</strong> and successfully completed the <strong>SoftUni
-                Professional
-                Modules</strong> in <strong>August 2024</strong>. I’m excited to continue honing my skills in <strong>C#
-                and Web
-                Development</strong>, and I’m always eager to learn new technologies and work on interesting projects.
-        </p>
+            I began my studies in <strong>September 2022</strong> and successfully completed the <strong>SoftUni
+                Professional Modules</strong> in <strong>August 2024</strong>. I’m excited to continue honing my skills in <strong>C#
+                and Web Development</strong>, and I’m always eager to learn new technologies and work on interesting projects.</p>
+        <p>As a Full-Stack C# Developer, I specialize in building efficient and scalable web applications using C#, .NET, and
+            ASP.NET Core. I combine my solid understanding of HTML, CSS, and JavaScript to create dynamic front-ends, while
+            integrating them with robust back-end systems powered by Microsoft SQL Server.</p>
+        
     </header>
 
     <main>
         <section>
-            <h2>📚 SoftUni Professional Modules (2022-2024)</h2>
-            <button class="button" id="certifications-btn"
-                onclick="toggleList('certification-list', 'SoftUni Modules')">SoftUni Modules</button>
-            <ul id="certification-list">
+            <h2>💻 Technical & Soft Skills</h2>
+            <div class="skills-grid">
+                <div>
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li><strong>Programming Languages:</strong> C#, JavaScript, HTML, CSS</li>
+                        <li><strong>Tools:</strong> Visual Studio, Visual Studio Code, SSMS</li>
+                        <li><strong>Frameworks:</strong> .NET, ASP.NET Core, EF Core</li>
+                        <li><strong>Databases:</strong> Microsoft SQL Server</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li><strong>Problem-Solving:</strong> Identifying, analyzing, and solving complex challenges.</li>
+                        <li><strong>Attention to Detail:</strong> Delivering high-quality and precise solutions.</li>
+                        <li><strong>Teamwork & Collaboration:</strong> Working seamlessly in teams to achieve goals.</li>
+                        <li><strong>Effective Communication:</strong> Conveying complex ideas clearly and effectively.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-            </ul>
+        <section>
+            <h2>📚 SoftUni Professional Modules (2022-2024)</h2>
+            <button class="button" id="certifications-btn" onclick="toggleList('certification-list', 'Show Modules')">Show Modules</button>
+            <ul id="certification-list"></ul>
         </section>
 
         <section>
             <h2>📫 Let's Connect!</h2>
-            <p>Feel free to reach out if you'd like to collaborate or connect.</p>
+            <p>If you're interested in collaboration or want to get in touch, click the button below.</p>
             <button class="button" id="curious-btn" onclick="showContactInfo()">Curious?</button>
-            <ul id="contact-list">
-                <li><i class="fa-solid fa-envelope"></i><strong> Email:</strong> <a
-                        href="mailto:nbobchev@yahoo.com">nbobchev@yahoo.com</a></li>
-                <li><i class="fa-brands fa-linkedin"></i> <strong>LinkedIn:</strong> <a
-                        href="https://www.linkedin.com/in/atanas-bobchev-7056792b5/" target="_blank">LinkedIn
-                        Profile</a></li>
-                <li><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/NaskoksaN"
-                        target="_blank">NaskoksaN GitHub</a></li>
+            <ul id="contact-list" style="display: none;">
+                <li><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> <a href="mailto:nbobchev@yahoo.com">nbobchev@yahoo.com</a></li>
+                <li><i class="fa-brands fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/atanas-bobchev-7056792b5/" target="_blank">LinkedIn Profile</a></li>
+                <li><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/NaskoksaN" target="_blank">NaskoksaN GitHub</a></li>
             </ul>
-
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Nasko Bobchev. All rights reserved.</p>
+        <p>&copy; 2024 Atanas Bobchev. All rights reserved.</p>
     </footer>
 
     <script>
-        window.addEventListener('load', function () {
-            document.body.classList.add('loaded');
-        });
         const certifications = [
             { name: "C# Programming Basics", url: "https://softuni.bg/certificates/details/143669/35c7c325" },
             { name: "C# Fundamentals", url: "https://softuni.bg/certificates/details/166578/6dcdbe2a" },
@@ -163,14 +189,24 @@
             { name: "HTML & CSS", url: "https://softuni.bg/certificates/details/218399/43b08988" },
             { name: "JavaScript Front-End", url: "https://softuni.bg/certificates/details/223866/e079d5fd" }
         ];
+        window.addEventListener('load', function () {
+            document.body.classList.add('loaded');
+        });
+
+        function showContactInfo() {
+            const contactList = document.getElementById('contact-list');
+            const curiousButton = document.getElementById('curious-btn');
+            contactList.style.display = 'block';
+            curiousButton.style.display = 'none';
+        }
 
         function toggleList(listId, buttonText) {
             const list = document.getElementById(listId);
-            const button = list.previousElementSibling;
+            const button = document.getElementById('certifications-btn');
             if (list.style.display === 'none' || list.style.display === '') {
                 list.style.display = 'block';
                 populateList(listId);
-                button.textContent = 'Hide SoftUni Modules';
+                button.textContent = 'Hide Modules';
             } else {
                 list.style.display = 'none';
                 button.textContent = buttonText;
@@ -181,34 +217,20 @@
             const list = document.getElementById(listId);
             if (listId === 'certification-list') {
                 list.innerHTML = '';
-
                 certifications.forEach(cert => {
-
                     const li = document.createElement('li');
-
                     const strong = document.createElement('strong');
                     strong.textContent = cert.name;
-
                     const link = document.createElement('a');
                     link.href = cert.url;
                     link.target = '_blank';
                     link.textContent = 'Certificate & Exam Result';
-
                     li.appendChild(strong);
                     li.appendChild(document.createTextNode(' – '));
                     li.appendChild(link);
-
                     list.appendChild(li);
                 });
             }
-        }
-
-        function showContactInfo() {
-            const contactList = document.getElementById('contact-list');
-            const curiousButton = document.getElementById('curious-btn');
-
-            contactList.style.display = 'block';
-            curiousButton.style.display = 'none';
         }
     </script>
 </body>
